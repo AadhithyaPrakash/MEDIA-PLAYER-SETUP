@@ -14,10 +14,11 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-MEDIA_FOLDER = r'D:\movies'  # Update to your media folder
-VLC_PATH = r'C:\Program Files\VideoLAN\VLC\vlc.exe'  # Update to your VLC path
+# Configuration
+MEDIA_FOLDER = r'D:\movies'  # Remove the double backslashes
+VLC_PATH = r'C:\Program Files\VideoLAN\VLC\vlc.exe'
 VLC_HTTP_PORT = 8080
-VLC_PASSWORD = 'vlcpass'  # Change this password
+VLC_PASSWORD = 'vlcpass'
 VLC_STREAM_PORT = 8081
 
 class VLCController:
