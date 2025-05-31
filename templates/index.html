@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Media Streamer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Media Streamer</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search media..." />
+            </div>
+        </header>
+        <main>
+            <div class="media-player">
+                <div class="player-container">
+                    <video id="video-player" controls></video>
+                    <audio id="audio-player" controls></audio>
+                </div>
+                <div class="now-playing">
+                    <h3>Now Playing:</h3>
+                    <p id="now-playing-title">Select a file to play</p>
+                </div>
+                <div class="player-controls">
+                    <button class="control-btn" id="prev-btn">⏮</button>
+                    <button class="control-btn" id="play-btn">▶</button>
+                    <button class="control-btn" id="next-btn">⏭</button>
+                    <div class="volume-control">
+                        <span>🔊</span>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.1" />
+                    </div>
+                </div>
+            </div>
+            <div class="media-library">
+                <h2>Media Library</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="audio">Audio</button>
+                    <button class="filter-btn" data-filter="video">Video</button>
+                </div>
+                <div class="media-list" id="media-list">
+                    <p class="loading-message">Loading media...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
